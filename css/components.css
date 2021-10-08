@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=Open+Sans:ital@0;1&family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-color: #70e73b;
+}
+
+._ff-primary {
+  font-family: "Poppins", sans-serif;
+}
+
+._ff-secondary {
+  font-family: "Open Sans", serif;
+}
+
+._color-primary {
+  color: #70e73b !important;
+}
+
+._color-secondary {
+  color: #aaaaaa !important;
+}
+
+._text-normal {
+  font-weight: 400 !important;
+}
+
+._text-semibold {
+  font-weight: 600 !important;
+}
+
+._text-bold {
+  font-weight: 700 !important;
+}
+
+._bg-primary {
+  background-color: #70e73b !important;
+}
+
+._bg-secondary {
+  background-color: #aaaaaa !important;
+}
+
+._border-primary {
+  border-color: #70e73b !important;
+}
+
+._border-secondary {
+  border-color: #aaaaaa !important;
+}
+
+._hover-color-primary:hover {
+  color: #70e73b !important;
+}
+
+._hover-color-secondary:hover {
+  color: #aaaaaa !important;
+}
+
+._hover-bg-primary:hover {
+  background-color: #70e73b !important;
+}
+
+._hover-bg-secondary:hover {
+  background-color: #aaaaaa !important;
+}
+
+._hover-border-primary:hover {
+  border-color: #70e73b !important;
+}
+
+._hover-border-secondary:hover {
+  border-color: #aaaaaa !important;
+}
+
+._shadow-md {
+  -webkit-box-shadow: 0 0.175rem 0.75rem rgba(0, 0, 0, 0.125) !important;
+          box-shadow: 0 0.175rem 0.75rem rgba(0, 0, 0, 0.125) !important;
+}
+
+._hover-shadow:hover {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+._hover-shadow-sm:hover {
+  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+._hover-shadow-md:hover {
+  -webkit-box-shadow: 0 0.175rem 0.75rem rgba(0, 0, 0, 0.125) !important;
+          box-shadow: 0 0.175rem 0.75rem rgba(0, 0, 0, 0.125) !important;
+}
+
+._hover-shadow-lg:hover {
+  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+._w-100vw {
+  width: 100vw !important;
+}
+
+._w-90vw {
+  width: 90vw !important;
+}
+
+._w-80vw {
+  width: 80vw !important;
+}
+
+._w-70vw {
+  width: 70vw !important;
+}
+
+._w-60vw {
+  width: 60vw !important;
+}
+
+._w-50vw {
+  width: 50vw !important;
+}
+
+._w-40vw {
+  width: 40vw !important;
+}
+
+._w-30vw {
+  width: 30vw !important;
+}
+
+._w-20vw {
+  width: 20vw !important;
+}
+
+._w-10vw {
+  width: 10vw !important;
+}
+
+._h-100vh {
+  height: 100vh !important;
+}
+
+._h-90vh {
+  height: 90vh !important;
+}
+
+._h-80vh {
+  height: 80vh !important;
+}
+
+._h-70vh {
+  height: 70vh !important;
+}
+
+._h-60vh {
+  height: 60vh !important;
+}
+
+._h-50vh {
+  height: 50vh !important;
+}
+
+._h-40vh {
+  height: 40vh !important;
+}
+
+._h-30vh {
+  height: 30vh !important;
+}
+
+._h-20vh {
+  height: 20vh !important;
+}
+
+._h-10vh {
+  height: 10vh !important;
+}
+
+._w-10 {
+  width: 10% !important;
+}
+
+._w-20 {
+  width: 20% !important;
+}
+
+._w-30 {
+  width: 30% !important;
+}
+
+._w-40 {
+  width: 40% !important;
+}
+
+._w-50 {
+  width: 50% !important;
+}
+
+._w-60 {
+  width: 60% !important;
+}
+
+._w-70 {
+  width: 70% !important;
+}
+
+._w-80 {
+  width: 80% !important;
+}
+
+._w-90 {
+  width: 90% !important;
+}
+
+._w-100 {
+  width: 100% !important;
+}
+
+._h-10 {
+  height: 10% !important;
+}
+
+._h-20 {
+  height: 20% !important;
+}
+
+._h-30 {
+  height: 30% !important;
+}
+
+._h-40 {
+  height: 40% !important;
+}
+
+._h-50 {
+  height: 50% !important;
+}
+
+._h-60 {
+  height: 60% !important;
+}
+
+._h-70 {
+  height: 70% !important;
+}
+
+._h-80 {
+  height: 80% !important;
+}
+
+._h-90 {
+  height: 90% !important;
+}
+
+._h-100 {
+  height: 100% !important;
+}
+
+._transition {
+  -webkit-transition: 300ms !important;
+  transition: 300ms !important;
+}
+
+._hover-btn-primary:hover {
+  border-color: #70e73b !important;
+  background: transparent !important;
+  color: #70e73b !important;
+}
+
+._hover-btn-secondary:hover {
+  border-color: #aaaaaa !important;
+  background: transparent !important;
+  color: #aaaaaa !important;
+}
+
+._text-size-25rem {
+  font-size: 2.5rem !important;
+}
+
+._text-size-3rem {
+  font-size: 3rem !important;
+}
+/*# sourceMappingURL=components.css.map */

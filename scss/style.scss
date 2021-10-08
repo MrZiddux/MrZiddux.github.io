@@ -1,0 +1,88 @@
+$clr-primary: #70e73b;
+$clr-secondary: #aaaaaa;
+$clr-black: #000;
+$clr-white: #fff;
+
+$ff-primary: "Poppins", sans-serif;
+$ff-secondary: "Open Sans", serif;
+
+.img-content {
+   position: relative;
+   z-index: 2;
+}
+
+.img-content .rectangle {
+   position: absolute;
+   width: 60%;
+   height: 60%;
+   background-color: $clr-primary;
+   z-index: -1;
+}
+
+.img-content .rectangle.rectangle-top-right {
+   top: 0;
+   right: 0;
+}
+
+.img-content .rectangle.rectangle-top-left {
+   top: 0;
+   left: 0;
+}
+
+.img-content .rectangle.rectangle-bottom-left {
+   bottom: 0;
+   left: 0;
+}
+
+.img-content .rectangle.rectangle-bottom-right {
+   bottom: 0;
+   right: 0;
+}
+
+.img-content .img-wrap {
+   padding: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.img-content .img-wrap img {
+   width: 100%;
+   height: 700px;
+   object-fit: cover;
+   object-position: center;
+}
+
+.text-wrap {
+   position: relative;
+   display: flex;
+}
+
+.text-wrap .text-group {
+   position: absolute;
+   display: none;
+   flex-direction: column;
+   top: 50%;
+   left: 0;
+   transform: translate(0, -50%);
+   padding: 3rem 0;
+}
+
+.text-wrap .text-group .text-item p {
+   transform-origin: bottom left;
+   transform: rotate(-90deg);
+}
+
+.tag-text {
+   display: flex;
+}
+
+@media screen and (min-width: 769px) {
+   .text-wrap .text-group {
+      display: flex;
+   }
+
+   .tag-text {
+      display: none;
+   }
+}
