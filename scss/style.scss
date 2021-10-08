@@ -48,7 +48,7 @@ $ff-secondary: "Open Sans", serif;
 
 .img-content .img-wrap img {
    width: 100%;
-   height: 700px;
+   max-height: 700px;
    object-fit: cover;
    object-position: center;
 }
@@ -75,9 +75,10 @@ $ff-secondary: "Open Sans", serif;
 
 .tag-text {
    display: flex;
+   flex-wrap: wrap;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 992px) {
    .text-wrap .text-group {
       display: flex;
    }

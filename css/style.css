@@ -46,7 +46,7 @@
 
 .img-content .img-wrap img {
   width: 100%;
-  height: 700px;
+  max-height: 700px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -85,9 +85,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 992px) {
   .text-wrap .text-group {
     display: -webkit-box;
     display: -ms-flexbox;
