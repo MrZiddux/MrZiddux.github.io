@@ -6,6 +6,11 @@ $clr-white: #fff;
 $ff-primary: "Poppins", sans-serif;
 $ff-secondary: "Open Sans", serif;
 
+:focus {
+   box-shadow: none;
+   border-color: $clr-primary !important;
+}
+
 .img-content {
    position: relative;
    z-index: 2;
@@ -104,6 +109,37 @@ $ff-secondary: "Open Sans", serif;
    object-position: center;
 }
 
+.img-about-3 {
+   width: 100px;
+   max-width: 100px;
+   height: 100px;
+   max-height: 100px;
+   object-fit: cover;
+   object-position: center;
+}
+
+.input-custom {
+   border-radius: 200px;
+   box-shadow: inset 2px 2px 4px #c2c2c2, inset -2px -2px 4px #ffffff;
+   padding: 0.5rem 1.5rem;
+}
+
+.input-custom:focus {
+   border-radius: 200px;
+   box-shadow: inset 2px 2px 4px #c2c2c2, inset -2px -2px 4px #ffffff !important;
+}
+
+.input-custom-2 {
+   border-radius: 25px;
+   box-shadow: inset 2px 2px 4px #c2c2c2, inset -2px -2px 4px #ffffff;
+   padding: 0.5rem 1.5rem;
+}
+
+.input-custom-2:focus {
+   border-radius: 25px;
+   box-shadow: inset 2px 2px 4px #c2c2c2, inset -2px -2px 4px #ffffff !important;
+}
+
 @media screen and (min-width: 768px) {
    .img-about-1 {
       max-height: 350px;
@@ -113,6 +149,13 @@ $ff-secondary: "Open Sans", serif;
    .img-about-2 {
       max-height: 350px;
       height: 350px;
+   }
+
+   .img-about-3 {
+      width: 150px;
+      max-width: 150px;
+      height: 150px;
+      max-height: 150px;
    }
 }
 
@@ -147,6 +190,13 @@ $ff-secondary: "Open Sans", serif;
       max-height: 385px;
       height: 385px;
    }
+
+   .img-about-3 {
+      width: 175px;
+      max-width: 175px;
+      height: 175px;
+      max-height: 175px;
+   }
 }
 
 @media screen and (min-width: 1440px) {
@@ -159,5 +209,12 @@ $ff-secondary: "Open Sans", serif;
 
    .img-content .img-wrap img {
       max-height: 600px;
+   }
+
+   .img-about-3 {
+      width: 200px;
+      max-width: 200px;
+      height: 200px;
+      max-height: 200px;
    }
 }
