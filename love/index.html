@@ -8,28 +8,54 @@
 </head>
 <body>
    <script src="/vendors/jquery/jquery.min.js"></script>
-   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script>
-      swal("Opii, ijad boleh gadang ga?", {
-            buttons: {
-               cancel: "Ngga Boleh",
-               boleh: {
-                  text: "Boleh",
-                  value: "boleh",
-               },
-            },
-         })
-            .then((value) => {
-               switch (value) {
-
-                  case "boleh":
-                     swal("Asiik Gitu Dong");
-                     break;
-
-                  default:
-                     swal("Huu Oncom!");
-               }
-            });
+      Swal.fire({
+         text: 'Opii, ijad boleh gadang yaa. Pliss',
+         showCancelButton: false,
+         showDenyButton: true,
+         denyButtonText: 'Ga Boleh !',
+         confirmButtonText: 'Boleh laa',
+      }).then(result => {
+         if (result.isConfirmed) {
+            Swal.fire({
+               title: 'Asiik, gitu dong',
+               confirmButtonText: 'Wleee',
+               width: 600,
+               padding: '3em',
+               backdrop: `
+                  rgba(250, 179, 188, 0.2)
+                  url("/love/yourlove.gif")
+                  left top
+               `
+            }).then(result => {
+               setTimeout(function () {
+                  location.reload();
+               }, 1500);
+            })
+         } else if (result.isDenied) {
+            Swal.fire({
+               text: 'Iih, Boleh atuh yaaa..',
+               confirmButtonText: 'Iyaa deh',
+            }).then(result => {
+               Swal.fire({
+                  title: 'Makasih, opii sayang',
+                  confirmButtonText: 'Wleee',
+                  width: 600,
+                  padding: '3em',
+                  backdrop: `
+                     rgba(250, 179, 188, 0.2)
+                     url("/love/yourlove.gif")
+                     left top
+                  `
+               }).then(result => {
+                  setTimeout(function() {
+                     location.reload();
+                  }, 1500);
+               })
+            })
+         }
+      })
    </script>
 </body>
 </html>
