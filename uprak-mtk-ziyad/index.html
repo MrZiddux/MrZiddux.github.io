@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hitung Kecepatan, Jarak, dan Waktu</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+      tailwind.config = {
+         theme: {
+            extend: {
+               container: {
+                  center: true,
+               }
+            }
+         }
+      }
+   </script>
+   <style>
+      * {
+         box-sizing: border-box !important;
+      }
+   </style>
+</head>
+
+<body class="bg-violet-500">
+   <div class="container px-4 pt-12 pb-24">
+      <div class="grid grid-cols-4 gap-4 text-violet-500">
+         <div
+            class="bg-white col-span-4 py-8 px-4 rounded flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+            <h1 class="font-bold text-2xl uppercase tracking-wider">Hitung Kecepatan, Jarak, Waktu</h1>
+            <ul class="flex flex-wrap list-none border-b-0">
+               <li>
+                  <button id="navKecepatan" class="block font-medium text-xs leading-tight uppercase
+              border-transparent px-6 hover:bg-gray-100 py-3 transition border-b border-violet-500">Kecepatan</button>
+               </li>
+               <li>
+                  <button id="navJarak" class="block font-medium text-xs leading-tight uppercase
+              border-transparent px-6 hover:bg-gray-100 py-3 transition">
+                     Jarak</button>
+               </li>
+               <li>
+                  <button id="navWaktu" class="block font-medium text-xs leading-tight uppercase
+              border-transparent px-6 hover:bg-gray-100 py-3 transition">
+                     Waktu</button>
+               </li>
+            </ul>
+         </div>
+         <div class="bg-white lg:col-span-3 md:col-span-2 col-span-4 py-8 px-4 rounded">
+            <form id="formPhy" autocomplete="off">
+               <div class="flex flex-col space-y-3">
+                  <div class="w-full">
+                     <label for="" class="mb-2 inline-block">Kecepatan (km)</label>
+                     <input type="text" id="inputKecepatan"
+                        class="w-full border border-violet-500 px-1 py-1 rounded focus:outline-0 focus:ring focus:ring-violet-100 disabled:bg-gray-200 transition"
+                        value="0" disabled>
+                  </div>
+                  <div class="w-full">
+                     <label for="" class="mb-2 inline-block">Jarak (km)</label>
+                     <input type="text" id="inputJarak"
+                        class="w-full border border-violet-500 px-1 py-1 rounded focus:outline-0 focus:ring focus:ring-violet-100 disabled:bg-gray-200 transition"
+                        value="0">
+                  </div>
+                  <div class="w-full">
+                     <label for="" class="mb-2 inline-block">Waktu (jam)</label>
+                     <input type="text" id="inputWaktu"
+                        class="w-full border border-violet-500 px-1 py-1 rounded focus:outline-0 focus:ring focus:ring-violet-100 disabled:bg-gray-200 transition"
+                        value="0">
+                  </div>
+                  <button type="submit"
+                     class="bg-violet-500 py-2 px-3 text-white mt-3 rounded transition hover:scale-110 self-end">Hitung</button>
+               </div>
+            </form>
+         </div>
+         <div class="bg-white md:col-span-2 lg:col-span-1 col-span-4 py-8 px-4 rounded">
+            <h1 class="font-bold text-2xl uppercase tracking-wider mb-3">Hasil</h1>
+            <div class="flex">
+               <p id="textPhy">Kecepatan =</p>
+               <p id="resultPhy" class="ml-1">0</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <footer class="fixed bottom-0 w-full py-6 bg-violet-400">
+      <div class="container flex justify-center item-center">
+         <p class="text-neutral-100">(36) Ziyadatul Khair</p>
+      </div>
+   </footer>
+
+   <script>
+      const navKecepatan = document.querySelector('#navKecepatan');
+      const navJarak = document.querySelector('#navJarak');
+      const navWaktu = document.querySelector('#navWaktu');
+      const inputKecepatan = document.querySelector('#inputKecepatan');
+      const inputJarak = document.querySelector('#inputJarak');
+      const inputWaktu = document.querySelector('#inputWaktu');
+      const textPhy = document.querySelector('#textPhy');
+      const resultPhy = document.querySelector('#resultPhy');
+      const formPhy = document.querySelector('#formPhy');
+
+      inputKecepatan.addEventListener('keypress', function (e) {
+         if (e.keyCode == 13) {
+            e.preventDefault();
+         }
+         if (e.keyCode < 48 || e.keyCode > 57) {
+            e.preventDefault();
+         }
+      });
+
+      inputJarak.addEventListener('keypress', function (e) {
+         if (e.keyCode == 13) {
+            e.preventDefault();
+         }
+         if (e.keyCode < 48 || e.keyCode > 57) {
+            e.preventDefault();
+         }
+      });
+
+      inputWaktu.addEventListener('keypress', function (e) {
+         if (e.keyCode == 13) {
+            e.preventDefault();
+         }
+         if (e.keyCode < 48 || e.keyCode > 57) {
+            e.preventDefault();
+         }
+      });
+
+      const reset = () => {
+         inputKecepatan.value = 0;
+         inputJarak.value = 0;
+         inputWaktu.value = 0;
+         resultPhy.innerHTML = '0';
+      }
+
+      navKecepatan.addEventListener('click', function () {
+         navKecepatan.classList.add('border-b', 'border-violet-500');
+         navJarak.classList.remove('border-b', 'border-violet-500');
+         navWaktu.classList.remove('border-b', 'border-violet-500');
+         inputKecepatan.disabled = true;
+         inputJarak.disabled = false;
+         inputWaktu.disabled = false;
+         reset();
+         textPhy.innerHTML = 'Kecepatan = ';
+      });
+
+      navJarak.addEventListener('click', function () {
+         navJarak.classList.add('border-b', 'border-violet-500');
+         navKecepatan.classList.remove('border-b', 'border-violet-500');
+         navWaktu.classList.remove('border-b', 'border-violet-500');
+         inputWaktu.disabled = false;
+         inputJarak.disabled = true;
+         inputKecepatan.disabled = false;
+         reset();
+         textPhy.innerHTML = 'Jarak = ';
+      });
+
+      navWaktu.addEventListener('click', function () {
+         navWaktu.classList.add('border-b', 'border-violet-500');
+         navKecepatan.classList.remove('border-b', 'border-violet-500');
+         navJarak.classList.remove('border-b', 'border-violet-500');
+         inputWaktu.disabled = true;
+         inputKecepatan.disabled = false;
+         inputJarak.disabled = false;
+         reset();
+         textPhy.innerHTML = 'Waktu = ';
+      });
+
+      // when formPhy is submitted calculate phytagoras 
+      formPhy.addEventListener('submit', function (e) {
+         e.preventDefault();
+         let kecepatan = parseInt(inputKecepatan.value);
+         let jarak = parseInt(inputJarak.value);
+         let waktu = parseInt(inputWaktu.value);
+
+         if (navKecepatan.classList.contains('border-b', 'border-violet-500')) {
+            result = jarak/waktu;
+            resultPhy.innerHTML = result + ' km/jam';
+         } else if (navWaktu.classList.contains('border-b', 'border-violet-500')) {
+            result = jarak/kecepatan;
+            resultPhy.innerHTML = result + ' jam'
+         } else if (navJarak.classList.contains('border-b', 'border-violet-500')) {
+            result = kecepatan*waktu;
+            resultPhy.innerHTML = result + ' km';
+         }
+      });
+   </script>
+</body>
+
+</html>
